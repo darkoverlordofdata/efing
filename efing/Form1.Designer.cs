@@ -1,6 +1,6 @@
 ﻿namespace efing
 {
-    partial class Main
+    partial class mainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,10 +36,16 @@
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip = new System.Windows.Forms.StatusStrip();
+            this.baseSplitContainer = new System.Windows.Forms.SplitContainer();
             this.splitContainer = new System.Windows.Forms.SplitContainer();
             this.folderTreeView = new System.Windows.Forms.TreeView();
-            this.fileListBox = new System.Windows.Forms.ListBox();
+            this.fileListView = new System.Windows.Forms.ListView();
+            this.fileTextBox = new System.Windows.Forms.TextBox();
             this.menuStrip.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.baseSplitContainer)).BeginInit();
+            this.baseSplitContainer.Panel1.SuspendLayout();
+            this.baseSplitContainer.Panel2.SuspendLayout();
+            this.baseSplitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).BeginInit();
             this.splitContainer.Panel1.SuspendLayout();
             this.splitContainer.Panel2.SuspendLayout();
@@ -112,10 +118,29 @@
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "statusStrip1";
             // 
+            // baseSplitContainer
+            // 
+            this.baseSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.baseSplitContainer.Location = new System.Drawing.Point(0, 33);
+            this.baseSplitContainer.Name = "baseSplitContainer";
+            this.baseSplitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // baseSplitContainer.Panel1
+            // 
+            this.baseSplitContainer.Panel1.Controls.Add(this.splitContainer);
+            this.baseSplitContainer.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
+            // 
+            // baseSplitContainer.Panel2
+            // 
+            this.baseSplitContainer.Panel2.Controls.Add(this.fileTextBox);
+            this.baseSplitContainer.Size = new System.Drawing.Size(833, 559);
+            this.baseSplitContainer.SplitterDistance = 400;
+            this.baseSplitContainer.TabIndex = 4;
+            // 
             // splitContainer
             // 
             this.splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer.Location = new System.Drawing.Point(0, 33);
+            this.splitContainer.Location = new System.Drawing.Point(0, 0);
             this.splitContainer.Name = "splitContainer";
             // 
             // splitContainer.Panel1
@@ -124,43 +149,55 @@
             // 
             // splitContainer.Panel2
             // 
-            this.splitContainer.Panel2.Controls.Add(this.fileListBox);
-            this.splitContainer.Size = new System.Drawing.Size(833, 559);
-            this.splitContainer.SplitterDistance = 315;
-            this.splitContainer.TabIndex = 3;
+            this.splitContainer.Panel2.Controls.Add(this.fileListView);
+            this.splitContainer.Size = new System.Drawing.Size(833, 400);
+            this.splitContainer.SplitterDistance = 277;
+            this.splitContainer.TabIndex = 0;
             // 
             // folderTreeView
             // 
             this.folderTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.folderTreeView.Location = new System.Drawing.Point(0, 0);
             this.folderTreeView.Name = "folderTreeView";
-            this.folderTreeView.Size = new System.Drawing.Size(315, 559);
+            this.folderTreeView.Size = new System.Drawing.Size(277, 400);
             this.folderTreeView.TabIndex = 0;
             // 
-            // fileListBox
+            // fileListView
             // 
-            this.fileListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.fileListBox.FormattingEnabled = true;
-            this.fileListBox.IntegralHeight = false;
-            this.fileListBox.ItemHeight = 20;
-            this.fileListBox.Location = new System.Drawing.Point(0, 0);
-            this.fileListBox.Name = "fileListBox";
-            this.fileListBox.Size = new System.Drawing.Size(514, 559);
-            this.fileListBox.TabIndex = 0;
+            this.fileListView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fileListView.Location = new System.Drawing.Point(0, 0);
+            this.fileListView.Name = "fileListView";
+            this.fileListView.Size = new System.Drawing.Size(552, 400);
+            this.fileListView.TabIndex = 0;
+            this.fileListView.UseCompatibleStateImageBehavior = false;
             // 
-            // Main
+            // fileTextBox
+            // 
+            this.fileTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.fileTextBox.Location = new System.Drawing.Point(0, 0);
+            this.fileTextBox.Name = "fileTextBox";
+            this.fileTextBox.Size = new System.Drawing.Size(833, 26);
+            this.fileTextBox.TabIndex = 0;
+            // 
+            // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(833, 614);
-            this.Controls.Add(this.splitContainer);
+            this.Controls.Add(this.baseSplitContainer);
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
-            this.Name = "Main";
+            this.Name = "mainForm";
             this.Text = "efi-ng";
+            this.Load += new System.EventHandler(this.mainForm_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.baseSplitContainer.Panel1.ResumeLayout(false);
+            this.baseSplitContainer.Panel2.ResumeLayout(false);
+            this.baseSplitContainer.Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.baseSplitContainer)).EndInit();
+            this.baseSplitContainer.ResumeLayout(false);
             this.splitContainer.Panel1.ResumeLayout(false);
             this.splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer)).EndInit();
@@ -180,9 +217,11 @@
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.StatusStrip statusStrip;
+        private System.Windows.Forms.SplitContainer baseSplitContainer;
         private System.Windows.Forms.SplitContainer splitContainer;
         private System.Windows.Forms.TreeView folderTreeView;
-        private System.Windows.Forms.ListBox fileListBox;
+        private System.Windows.Forms.ListView fileListView;
+        private System.Windows.Forms.TextBox fileTextBox;
     }
 }
 

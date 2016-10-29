@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms;
 using System.IO; //File Operations
 
-namespace efing
-{
-    public partial class Main : Form
-    {
-        public Main() {
+namespace efing {
+	
+    public partial class mainForm : Form {
+		
+        public mainForm() {
             InitializeComponent();
         }
 
@@ -63,7 +62,7 @@ namespace efing
 
             string DateMod = null; //Stores Date Modified Of File
 
-            fileListBox.Items.Clear(); //Clear Existing Items
+            fileListView.Items.Clear(); //Clear Existing Items
 
 
             if (folderTreeView.SelectedNode.Nodes.Count == 1 && folderTreeView.SelectedNode.Nodes[0].Text == "Loading...") {
@@ -87,10 +86,9 @@ namespace efing
                         DateMod = System.IO.File.GetLastWriteTime(file).ToString(); //Get Date Modified For Each File
 
                         //AddImages(file); //Add File Icons
-
-                        fileListBox.Items.Add(file.Substring(file.LastIndexOf(Path.PathSeparator) + 1), file.ToString()); //Add Files & File Properties To ListView
-                        fileListBox.Items[SubItemIndex].SubItems.Add(FileExtension.ToString() + " File");
-                        fileListBox.Items[SubItemIndex].SubItems.Add(DateMod.ToString());
+						fileListView.Items.Add(file.Substring(file.LastIndexOf(Path.DirectorySeparatorChar) + 1), file.ToString()); //Add Files & File Properties To ListView
+						fileListView.Items[SubItemIndex].SubItems.Add(FileExtension.ToString() + " File");
+						fileListView.Items[SubItemIndex].SubItems.Add(DateMod.ToString());
 
                         SubItemIndex += 1;
 
@@ -101,7 +99,7 @@ namespace efing
                 catch (Exception ex) {
 
                     MessageBox.Show(ex.Message); //Something Went Wrong
-
+					 
                 }
 
             }
@@ -120,123 +118,129 @@ namespace efing
 
         }
 
-        private void frmWinExplore_Load(object sender, EventArgs e) {
+        private void mainForm_Load(object sender, EventArgs e) {
+
 
             folderTreeView.Sort(); //Sort Alphabetically
 
             TreeNode Tnode = folderTreeView.Nodes.Add("efi"); //Add Main Node
 
-            if (System.Environment.Platform == PlatformID.Unix) {
-                AddAllFolders(Tnode, "/boot/efi/"); //Add All Folders
+			if (Environment.OSVersion.Platform == PlatformID.Unix) {
+                AddAllFolders(Tnode, "/boot/efi/EFI/"); //Add mounted share
             }
             else {
-                AddAllFolders(Tnode, "S:\\"); //Add All Folders
+                AddAllFolders(Tnode, "S:\\"); //Add mounted drive
             }
 
-            fileListBox.View = View.Details; //Set ListView View Option
+            fileListView.View = View.Details; //Set ListView View Option
 
             //Add ListView Columns With Specified Width
-            fileListBox.Columns.Add("File Name", 150, HorizontalAlignment.Left);
-            fileListBox.Columns.Add("File Type", 80, HorizontalAlignment.Left);
-            fileListBox.Columns.Add("Date Modified", 150, HorizontalAlignment.Left);
+            fileListView.Columns.Add("File Name", 150, HorizontalAlignment.Left);
+            fileListView.Columns.Add("File Type", 80, HorizontalAlignment.Left);
+            fileListView.Columns.Add("Date Modified", 150, HorizontalAlignment.Left);
 
         }
 
-        private void copyToolStripMenuItem_Click(object sender, EventArgs e) {
+        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e) {
 
-            ListView.SelectedListViewItemCollection lvSel = this.fileListBox.SelectedItems; //ListViewItems
+        }
+        /**
+private void copyToolStripMenuItem_Click(object sender, EventArgs e) {
 
-            string strFileName = null; //File Name
+    ListView.SelectedListViewItemCollection lvSel = this.fileListView.SelectedItems; //ListViewItems
 
-            foreach (ListViewItem lvItem in lvSel) {
+    string strFileName = null; //File Name
 
-                strFileName = trvFolders.SelectedNode.Tag + "\\" + lvItem.Text; //Get Selected Filename
+    foreach (ListViewItem lvItem in lvSel) {
 
-                DataObject clpDataObj = new DataObject(); //Create New DataObject
+        strFileName = folderTreeView.SelectedNode.Tag + Path.DirectorySeparatorChar.ToString() + lvItem.Text; //Get Selected Filename
 
-                string[] cbClipBoardFile = new string[1]; //Break File Apart Into A String Array
+        DataObject clpDataObj = new DataObject(); //Create New DataObject
 
-                cbClipBoardFile[0] = strFileName;
+        string[] cbClipBoardFile = new string[1]; //Break File Apart Into A String Array
 
-                clpDataObj.SetData(DataFormats.FileDrop, true, cbClipBoardFile); //Put String Array Onto ClipBoard
+        cbClipBoardFile[0] = strFileName;
 
-                Clipboard.SetDataObject(clpDataObj);
+        clpDataObj.SetData(DataFormats.FileDrop, true, cbClipBoardFile); //Put String Array Onto ClipBoard
 
-                MessageBox.Show("File Copied To Clipboard"); //Inform The User
+        Clipboard.SetDataObject(clpDataObj);
+
+        MessageBox.Show("File Copied To Clipboard"); //Inform The User
+
+    }
+
+}
+
+private void pasteToolStripMenuItem_Click(object sender, EventArgs e) {
+
+    IDataObject idClipboardData = Clipboard.GetDataObject(); //Get Data Present on ClipBoard
+
+    if (idClipboardData.GetDataPresent(DataFormats.FileDrop)) {
+
+        string[] strClipFile = (string[])idClipboardData.GetData(DataFormats.FileDrop); //Convert String Array Back Into File
+
+        int i = 0;
+
+
+        for (i = 0; i <= strClipFile.Length - 1; i++) {
+            //If File Exists, Rename COpied File
+            if (File.Exists(folderTreeView.SelectedNode.Tag + Path.DirectorySeparatorChar.ToString() + Path.GetFileName(strClipFile[i]))) {
+
+                File.Move(folderTreeView.SelectedNode.Tag + Path.DirectorySeparatorChar.ToString() + Path.GetFileName(strClipFile[i]), folderTreeView.SelectedNode.Tag + "temp");
 
             }
 
-        }
-
-        private void pasteToolStripMenuItem_Click(object sender, EventArgs e) {
-
-            IDataObject idClipboardData = Clipboard.GetDataObject(); //Get Data Present on ClipBoard
-
-            if (idClipboardData.GetDataPresent(DataFormats.FileDrop)) {
-
-                string[] strClipFile = (string[])idClipboardData.GetData(DataFormats.FileDrop); //Convert String Array Back Into File
-
-                int i = 0;
-
-
-                for (i = 0; i <= strClipFile.Length - 1; i++) {
-                    //If File Exists, Rename COpied File
-                    if (File.Exists(trvFolders.SelectedNode.Tag + "\\" + Path.GetFileName(strClipFile[i]))) {
-
-                        File.Move(trvFolders.SelectedNode.Tag + "\\" + Path.GetFileName(strClipFile[i]), trvFolders.SelectedNode.Tag + "temp");
-
-                    }
-
-                    //Copy File From ClipbBoard
-                    File.Copy(strClipFile[i], trvFolders.SelectedNode.Tag + "\\" + Path.GetFileName(strClipFile[i]));
-
-                }
-
-                MessageBox.Show("File Pasted From Clipboard"); //Inform User
-
-            }
+            //Copy File From ClipbBoard
+            File.Copy(strClipFile[i], folderTreeView.SelectedNode.Tag + Path.DirectorySeparatorChar.ToString() + Path.GetFileName(strClipFile[i]));
 
         }
 
-        private void cboView_SelectedIndexChanged(object sender, EventArgs e) {
+        MessageBox.Show("File Pasted From Clipboard"); //Inform User
 
-            string strSelView = Convert.ToString(cboView.SelectedItem); //Change ListView ViewMode
+    }
 
-            switch (strSelView) {
+}
 
-                case "Large Icon":
+/**
+private void cboView_SelectedIndexChanged(object sender, EventArgs e) {
 
-                    lvFiles.View = View.LargeIcon;
+    string strSelView = Convert.ToString(cboView.SelectedItem); //Change ListView ViewMode
 
-                    break;
+    switch (strSelView) {
 
-                case "Details":
+        case "Large Icon":
 
-                    lvFiles.View = View.Details;
+            lvFiles.View = View.LargeIcon;
 
-                    break;
+            break;
 
-                case "Small Icon":
+        case "Details":
 
-                    lvFiles.View = View.SmallIcon;
+            lvFiles.View = View.Details;
 
-                    break;
+            break;
 
-                case "List":
+        case "Small Icon":
 
-                    lvFiles.View = View.List;
+            lvFiles.View = View.SmallIcon;
 
-                    break;
+            break;
 
-                case "Tile":
+        case "List":
 
-                    lvFiles.View = View.Tile;
+            lvFiles.View = View.List;
 
-                    break;
+            break;
 
-            }
+        case "Tile":
 
-        }
+            lvFiles.View = View.Tile;
+
+            break;
+
+    }
+
+}*/
 
 
     }
