@@ -1,0 +1,10 @@
+c:\users\bruce\documents\visual studio 2015\Projects\efing\efing\bin\Debug\efing.exe.config
+c:\users\bruce\documents\visual studio 2015\Projects\efing\efing\bin\Debug\efing.exe
+c:\users\bruce\documents\visual studio 2015\Projects\efing\efing\bin\Debug\efing.pdb
+c:\users\bruce\documents\visual studio 2015\Projects\efing\efing\obj\Debug\efing.csprojResolveAssemblyReference.cache
+c:\users\bruce\documents\visual studio 2015\Projects\efing\efing\obj\Debug\efing.Properties.Resources.resources
+c:\users\bruce\documents\visual studio 2015\Projects\efing\efing\obj\Debug\efing.csproj.GenerateResource.Cache
+c:\users\bruce\documents\visual studio 2015\Projects\efing\efing\obj\Debug\efing.exe
+c:\users\bruce\documents\visual studio 2015\Projects\efing\efing\obj\Debug\efing.pdb
+c:\users\bruce\documents\visual studio 2015\Projects\efing\efing\obj\Debug\efing.AboutBox.resources
+c:\users\bruce\documents\visual studio 2015\Projects\efing\efing\obj\Debug\efing.Main.resources
