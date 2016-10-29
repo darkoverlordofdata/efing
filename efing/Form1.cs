@@ -7,12 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO; //File Operations
+using System.IO;
 
 namespace efing {
+
+		
 	
     public partial class mainForm : Form {
-		
+
+		const string UNIX_ROOT = "/home/bruce/boot/efi/";
+		const string WIN_ROOT = "S:\\";
+		const string LOADING = "Loading...";
+
         public mainForm() {
             InitializeComponent();
         }
@@ -34,72 +40,64 @@ namespace efing {
 
             try {
 
-                foreach (string FolderNode in Directory.GetDirectories(FolderPath)) { //Load All Sub Folders
+                foreach (var FolderNode in Directory.GetDirectories(FolderPath)) {
+					
+					var folder = FolderNode.Substring(FolderNode.LastIndexOf(Path.PathSeparator) + 1);
+					var displayName = folder.Replace(UNIX_ROOT, "");
+					var subFolderNode = TNode.Nodes.Add(displayName); 
 
-                    TreeNode SubFolderNode = TNode.Nodes.Add(FolderNode.Substring(FolderNode.LastIndexOf(Path.PathSeparator) + 1)); //Add Each Sub Folder Name
+					subFolderNode.Tag = FolderNode;
+					subFolderNode.Nodes.Add(LOADING);
 
-                    SubFolderNode.Tag = FolderNode; //Set Tag For Each Sub Folder
-
-                    SubFolderNode.Nodes.Add("Loading...");
-
+					if (displayName == "EFI") subFolderNode.Expand();
                 }
 
             }
-
-            catch (Exception ex) {//Something Went Wrong
-
+            catch (Exception ex) {
                 MessageBox.Show(ex.Message);
-
             }
 
         }
 
         private void folderTreeView_AfterSelect(object sender, TreeViewEventArgs e) {
 
-            string FileExtension = null; //Stores File Extension
+			var fileExtension = "";
+            var subItemIndex = 0;
+            var dateMod = "";
 
-            int SubItemIndex = 0; //Sub Item Counter
-
-            string DateMod = null; //Stores Date Modified Of File
-
-            fileListView.Items.Clear(); //Clear Existing Items
+            fileListView.Items.Clear();
 
 
-            if (folderTreeView.SelectedNode.Nodes.Count == 1 && folderTreeView.SelectedNode.Nodes[0].Text == "Loading...") {
+            if (folderTreeView.SelectedNode.Nodes.Count == 1 
+				&& folderTreeView.SelectedNode.Nodes[0].Text == LOADING) {
 
-                folderTreeView.SelectedNode.Nodes.Clear(); //Reset
-
+                folderTreeView.SelectedNode.Nodes.Clear();
                 AddAllFolders(folderTreeView.SelectedNode, Convert.ToString(folderTreeView.SelectedNode.Tag));
-
             }
 
-            string folder = Convert.ToString(folderTreeView.SelectedNode.Tag); //Folder Name
+            var folder = Convert.ToString(folderTreeView.SelectedNode.Tag); //Folder Name
 
             if ((folder != null) && System.IO.Directory.Exists(folder)) {
 
                 try {
 
-                    foreach (string file in System.IO.Directory.GetFiles(folder)) {
+                    foreach (var file in System.IO.Directory.GetFiles(folder)) {
 
-                        FileExtension = System.IO.Path.GetExtension(file); //Get File Extension(s)
-
-                        DateMod = System.IO.File.GetLastWriteTime(file).ToString(); //Get Date Modified For Each File
+                        fileExtension = System.IO.Path.GetExtension(file); 
+                        dateMod = System.IO.File.GetLastWriteTime(file).ToString(); 
 
                         //AddImages(file); //Add File Icons
 						fileListView.Items.Add(file.Substring(file.LastIndexOf(Path.DirectorySeparatorChar) + 1), file.ToString()); //Add Files & File Properties To ListView
-						fileListView.Items[SubItemIndex].SubItems.Add(FileExtension.ToString() + " File");
-						fileListView.Items[SubItemIndex].SubItems.Add(DateMod.ToString());
+						fileListView.Items[subItemIndex].SubItems.Add(fileExtension.ToString() + " File");
+						fileListView.Items[subItemIndex].SubItems.Add(dateMod.ToString());
 
-                        SubItemIndex += 1;
+                        subItemIndex += 1;
 
                     }
 
                 }
-
                 catch (Exception ex) {
-
-                    MessageBox.Show(ex.Message); //Something Went Wrong
-					 
+                    MessageBox.Show(ex.Message);
                 }
 
             }
@@ -110,8 +108,7 @@ namespace efing {
         private void folderTreeView_BeforeExpand(object sender, TreeViewCancelEventArgs e) {
 
             if (e.Node.Nodes.Count == 1 && e.Node.Nodes[0].Text == "Loading...") {
-                e.Node.Nodes.Clear(); //Clear All Items
-
+                e.Node.Nodes.Clear();
                 AddAllFolders(e.Node, Convert.ToString(e.Node.Tag)); //Add All Folders
 
             }
@@ -120,30 +117,22 @@ namespace efing {
 
         private void mainForm_Load(object sender, EventArgs e) {
 
+            TreeNode Tnode = folderTreeView.Nodes.Add("System"); //Add Main Node
 
-            folderTreeView.Sort(); //Sort Alphabetically
+			AddAllFolders(Tnode, Environment.OSVersion.Platform == PlatformID.Unix
+				? UNIX_ROOT
+				: WIN_ROOT
+			);
 
-            TreeNode Tnode = folderTreeView.Nodes.Add("efi"); //Add Main Node
-
-			if (Environment.OSVersion.Platform == PlatformID.Unix) {
-                AddAllFolders(Tnode, "/boot/efi/EFI/"); //Add mounted share
-            }
-            else {
-                AddAllFolders(Tnode, "S:\\"); //Add mounted drive
-            }
-
+			Tnode.Expand();
             fileListView.View = View.Details; //Set ListView View Option
 
-            //Add ListView Columns With Specified Width
             fileListView.Columns.Add("File Name", 150, HorizontalAlignment.Left);
             fileListView.Columns.Add("File Type", 80, HorizontalAlignment.Left);
             fileListView.Columns.Add("Date Modified", 150, HorizontalAlignment.Left);
 
         }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e) {
-
-        }
         /**
 private void copyToolStripMenuItem_Click(object sender, EventArgs e) {
 

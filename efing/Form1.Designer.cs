@@ -128,7 +128,7 @@
             // baseSplitContainer.Panel1
             // 
             this.baseSplitContainer.Panel1.Controls.Add(this.splitContainer);
-            this.baseSplitContainer.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
+            //this.baseSplitContainer.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // baseSplitContainer.Panel2
             // 
@@ -161,6 +161,8 @@
             this.folderTreeView.Name = "folderTreeView";
             this.folderTreeView.Size = new System.Drawing.Size(277, 400);
             this.folderTreeView.TabIndex = 0;
+			this.folderTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.folderTreeView_BeforeExpand);
+			this.folderTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.folderTreeView_AfterSelect);
             // 
             // fileListView
             // 
