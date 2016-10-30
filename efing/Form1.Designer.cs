@@ -1,6 +1,6 @@
 ﻿namespace efing
 {
-    partial class mainForm
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -41,7 +41,9 @@
             this.folderTreeView = new System.Windows.Forms.TreeView();
             this.fileListView = new System.Windows.Forms.ListView();
             this.fileTextBox = new System.Windows.Forms.TextBox();
+            this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip.SuspendLayout();
+            this.statusStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.baseSplitContainer)).BeginInit();
             this.baseSplitContainer.Panel1.SuspendLayout();
             this.baseSplitContainer.Panel2.SuspendLayout();
@@ -112,9 +114,11 @@
             // statusStrip
             // 
             this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip.Location = new System.Drawing.Point(0, 592);
+            this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabel1});
+            this.statusStrip.Location = new System.Drawing.Point(0, 584);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(833, 22);
+            this.statusStrip.Size = new System.Drawing.Size(833, 30);
             this.statusStrip.TabIndex = 2;
             this.statusStrip.Text = "statusStrip1";
             // 
@@ -128,13 +132,12 @@
             // baseSplitContainer.Panel1
             // 
             this.baseSplitContainer.Panel1.Controls.Add(this.splitContainer);
-            //this.baseSplitContainer.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // baseSplitContainer.Panel2
             // 
             this.baseSplitContainer.Panel2.Controls.Add(this.fileTextBox);
-            this.baseSplitContainer.Size = new System.Drawing.Size(833, 559);
-            this.baseSplitContainer.SplitterDistance = 400;
+            this.baseSplitContainer.Size = new System.Drawing.Size(833, 551);
+            this.baseSplitContainer.SplitterDistance = 394;
             this.baseSplitContainer.TabIndex = 4;
             // 
             // splitContainer
@@ -150,7 +153,7 @@
             // splitContainer.Panel2
             // 
             this.splitContainer.Panel2.Controls.Add(this.fileListView);
-            this.splitContainer.Size = new System.Drawing.Size(833, 400);
+            this.splitContainer.Size = new System.Drawing.Size(833, 394);
             this.splitContainer.SplitterDistance = 277;
             this.splitContainer.TabIndex = 0;
             // 
@@ -159,19 +162,22 @@
             this.folderTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.folderTreeView.Location = new System.Drawing.Point(0, 0);
             this.folderTreeView.Name = "folderTreeView";
-            this.folderTreeView.Size = new System.Drawing.Size(277, 400);
+            this.folderTreeView.Size = new System.Drawing.Size(277, 394);
             this.folderTreeView.TabIndex = 0;
-			this.folderTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.folderTreeView_BeforeExpand);
-			this.folderTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.folderTreeView_AfterSelect);
+			this.folderTreeView.HideSelection = false;
+            this.folderTreeView.BeforeExpand += new System.Windows.Forms.TreeViewCancelEventHandler(this.folderTreeView_BeforeExpand);
+            this.folderTreeView.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.folderTreeView_AfterSelect);
             // 
             // fileListView
             // 
             this.fileListView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.fileListView.Location = new System.Drawing.Point(0, 0);
             this.fileListView.Name = "fileListView";
-            this.fileListView.Size = new System.Drawing.Size(552, 400);
+            this.fileListView.Size = new System.Drawing.Size(552, 394);
+			this.fileListView.HideSelection = false;
             this.fileListView.TabIndex = 0;
             this.fileListView.UseCompatibleStateImageBehavior = false;
+            this.fileListView.SelectedIndexChanged += new System.EventHandler(this.fileListView_SelectedIndexChanged);
             // 
             // fileTextBox
             // 
@@ -181,7 +187,13 @@
             this.fileTextBox.Size = new System.Drawing.Size(833, 26);
             this.fileTextBox.TabIndex = 0;
             // 
-            // mainForm
+            // toolStripStatusLabel1
+            // 
+            this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(179, 25);
+            this.toolStripStatusLabel1.Text = "";
+            // 
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -190,11 +202,13 @@
             this.Controls.Add(this.statusStrip);
             this.Controls.Add(this.menuStrip);
             this.MainMenuStrip = this.menuStrip;
-            this.Name = "mainForm";
-            this.Text = "efi-ng";
+            this.Name = "MainForm";
+            this.Text = "efing";
             this.Load += new System.EventHandler(this.mainForm_Load);
             this.menuStrip.ResumeLayout(false);
             this.menuStrip.PerformLayout();
+            this.statusStrip.ResumeLayout(false);
+            this.statusStrip.PerformLayout();
             this.baseSplitContainer.Panel1.ResumeLayout(false);
             this.baseSplitContainer.Panel2.ResumeLayout(false);
             this.baseSplitContainer.Panel2.PerformLayout();
@@ -224,6 +238,7 @@
         private System.Windows.Forms.TreeView folderTreeView;
         private System.Windows.Forms.ListView fileListView;
         private System.Windows.Forms.TextBox fileTextBox;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
     }
 }
 
