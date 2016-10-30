@@ -23,3 +23,7 @@ In windows, efing expects the S: drive to be mounted at /s
 ## status
 
 just an idea
+
+
+![screenshot](https://github.com/darkoverlordofdata/efing/raw/master/efing/Screenshot from 2016-10-29 17:34:57.png)
+
