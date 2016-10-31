@@ -51,6 +51,48 @@
     <Compile Include="AboutBox.Designer.cs">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Documents\Default.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Default.Designer.cs">
+      <DependentUpon>Default.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Grub_cfg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Grub_cfg.Designer.cs">
+      <DependentUpon>Grub_cfg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Refind_conf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Refind_conf.Designer.cs">
+      <DependentUpon>Refind_conf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Refind_linux_conf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Refind_linux_conf.Designer.cs">
+      <DependentUpon>Refind_linux_conf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Startup_nsh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Startup_nsh.Designer.cs">
+      <DependentUpon>Startup_nsh.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Documents\Theme_cfg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Documents\Theme_cfg.Designer.cs">
+      <DependentUpon>Theme_cfg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EfiExplorer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EfiExplorer.Designer.cs">
+      <DependentUpon>EfiExplorer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +103,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Documents\Default.resx">
+      <DependentUpon>Default.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EfiExplorer.resx">
+      <DependentUpon>EfiExplorer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -83,6 +131,20 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="boot\efi\EFI\startup.nsh" />
+    <None Include="boot\efi\EFI\RemixOS\TRANS.TBL" />
+    <None Include="boot\efi\EFI\RemixOS\grub.cfg" />
+    <None Include="boot\efi\EFI\RemixOS\grub.cfg.backup" />
+    <None Include="boot\efi\EFI\RemixOS\grub.cfg~" />
+    <None Include="boot\efi\EFI\RemixOS\theme.cfg" />
+    <None Include="boot\efi\EFI\elementary\refind_linux.conf" />
+    <None Include="boot\efi\EFI\linuxmint\refind_linux.conf" />
+    <None Include="boot\efi\EFI\refind\refind.conf" />
+    <None Include="boot\efi\EFI\ubuntu\grub.cfg" />
+    <None Include="boot\efi\boot\grub\grub.cfg" />
+    <None Include="boot\efi\boot\grub\grub.cfg.backup" />
+    <None Include="boot\efi\boot\grub\grub.cfg~" />
+    <None Include="boot\conf.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

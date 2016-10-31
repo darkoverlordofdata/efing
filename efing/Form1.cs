@@ -15,8 +15,10 @@ namespace efing {
 	
     public partial class MainForm : Form {
 
-		const string UNIX_ROOT = "/home/bruce/boot/efi/";
-		const string WIN_ROOT = "S:\\";
+        //const string UNIX_ROOT = "//boot/efi/";
+        //const string WIN_ROOT = "S:\\";
+        const string UNIX_ROOT = "/home/bruce/boot/efi/";
+		const string WIN_ROOT = "C:\\Users\\bruce\\boot\\efi\\";
 		const string LOADING = "Loading...";
 
         public MainForm() {
@@ -60,13 +62,20 @@ namespace efing {
         }
 
 		private void showFileContents(string filename) {
-			switch (Path.GetExtension(filename)) {
-			case ".cfg":
-				fileTextBox.Multiline = true;
+			switch (Path.GetFileName(filename)) {
+			case "grub.cfg":
 				fileTextBox.Text = System.IO.File.ReadAllText(filename);
 				break;
-			case ".conf":
-				fileTextBox.Multiline = true;
+			case "refind.conf":
+				fileTextBox.Text = System.IO.File.ReadAllText(filename);
+				break;
+			case "refind_linux.conf":
+				fileTextBox.Text = System.IO.File.ReadAllText(filename);
+				break;
+			case "startup.nsh":
+				fileTextBox.Text = System.IO.File.ReadAllText(filename);
+				break;
+			case "theme.cfg":
 				fileTextBox.Text = System.IO.File.ReadAllText(filename);
 				break;
 			default:

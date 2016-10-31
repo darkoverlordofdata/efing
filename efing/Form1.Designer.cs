@@ -186,6 +186,8 @@
             this.fileTextBox.Name = "fileTextBox";
             this.fileTextBox.Size = new System.Drawing.Size(833, 26);
             this.fileTextBox.TabIndex = 0;
+			this.fileTextBox.Multiline = true;
+			this.fileTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             // 
             // toolStripStatusLabel1
             // 

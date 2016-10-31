@@ -7,3 +7,8 @@
 /home/bruce/Git/efing/efing/bin/Debug/efing.exe
 /home/bruce/Git/efing/efing/obj/Debug/efing.exe
 /home/bruce/Git/efing/efing/obj/Debug/efing.exe.mdb
+/home/bruce/Git/efing/efing/obj/Debug/efing.EfiExplorer.resources
+/home/bruce/Git/efing/efing/obj/Debug/efing.EspExplorer.resources
+/home/bruce/Git/efing/efing/bin/Debug/WeifenLuo.WinFormsUI.Docking.dll
+/home/bruce/Git/efing/efing/obj/Debug/efing.Form2.resources
+/home/bruce/Git/efing/efing/obj/Debug/efing.Documents.Default.resources
