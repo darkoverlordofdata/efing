@@ -1,14 +1,11 @@
 /home/bruce/Git/efing/efing/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
 /home/bruce/Git/efing/efing/obj/Debug/efing.AboutBox.resources
-/home/bruce/Git/efing/efing/obj/Debug/efing.MainForm.resources
+/home/bruce/Git/efing/efing/obj/Debug/efing.Documents.Default.resources
+/home/bruce/Git/efing/efing/obj/Debug/efing.EfiExplorer.resources
 /home/bruce/Git/efing/efing/obj/Debug/efing.Properties.Resources.resources
 /home/bruce/Git/efing/efing/bin/Debug/efing.exe.config
 /home/bruce/Git/efing/efing/bin/Debug/efing.exe.mdb
 /home/bruce/Git/efing/efing/bin/Debug/efing.exe
 /home/bruce/Git/efing/efing/obj/Debug/efing.exe
 /home/bruce/Git/efing/efing/obj/Debug/efing.exe.mdb
-/home/bruce/Git/efing/efing/obj/Debug/efing.EfiExplorer.resources
-/home/bruce/Git/efing/efing/obj/Debug/efing.EspExplorer.resources
-/home/bruce/Git/efing/efing/bin/Debug/WeifenLuo.WinFormsUI.Docking.dll
-/home/bruce/Git/efing/efing/obj/Debug/efing.Form2.resources
-/home/bruce/Git/efing/efing/obj/Debug/efing.Documents.Default.resources
+/home/bruce/Git/efing/efing/bin/Debug/System.Windows.Forms.dll
