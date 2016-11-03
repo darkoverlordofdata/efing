@@ -17,6 +17,9 @@ namespace efing {
 		const string UNIX_ROOT = "/home/bruce/boot/efi/";
 		const string WIN_ROOT = "C:\\Users\\bruce\\boot\\efi\\";
 		const string LOADING = "Loading...";
+        const string FILTER = "Conf Files (*.conf)|*.conf|All Files (*.*)|*.*";
+
+        public string efiRoot = "";
 
         private int childFormNumber = 0;
 
@@ -25,11 +28,11 @@ namespace efing {
         }
 
 		private void EfiExplorer_Load(object sender, EventArgs e) {
-			if (Environment.OSVersion.Platform == PlatformID.Unix) {
-				ListDirectory(this.treeView, UNIX_ROOT);
-			} else {
-				ListDirectory(this.treeView, WIN_ROOT);
-			}
+            efiRoot = Environment.OSVersion.Platform == PlatformID.Unix
+                ? UNIX_ROOT
+                : WIN_ROOT;
+            ListDirectory(this.treeView, efiRoot);
+
 		}
 
         private void ShowNewForm(object sender, EventArgs e) {
@@ -42,8 +45,8 @@ namespace efing {
 
         private void OpenFile(object sender, EventArgs e) {
             OpenFileDialog openFileDialog = new OpenFileDialog();
-            openFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            openFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            openFileDialog.InitialDirectory = efiRoot;
+            openFileDialog.Filter = FILTER;
             if (openFileDialog.ShowDialog(this) == DialogResult.OK) {
                 string FileName = openFileDialog.FileName;
             }
@@ -51,8 +54,8 @@ namespace efing {
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e) {
             SaveFileDialog saveFileDialog = new SaveFileDialog();
-            saveFileDialog.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            saveFileDialog.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
+            saveFileDialog.InitialDirectory = efiRoot;
+            saveFileDialog.Filter = FILTER;
             if (saveFileDialog.ShowDialog(this) == DialogResult.OK) {
                 string FileName = saveFileDialog.FileName;
             }
@@ -112,14 +115,20 @@ namespace efing {
 			treeView.Nodes.Clear();
 			var rootDirectoryInfo = new DirectoryInfo(path);
 			treeView.Nodes.Add(CreateDirectoryNode(rootDirectoryInfo));
-		}
+            treeView.Nodes[0].Expand();
+
+        }
 
 		private static TreeNode CreateDirectoryNode(DirectoryInfo directoryInfo)
 		{
 			var directoryNode = new TreeNode(directoryInfo.Name);
-			foreach (var directory in directoryInfo.GetDirectories())
-				directoryNode.Nodes.Add(CreateDirectoryNode(directory));
-			foreach (var file in directoryInfo.GetFiles()) {
+			foreach (var directory in directoryInfo.GetDirectories()) {
+                var node = directoryNode.Nodes.Add(CreateDirectoryNode(directory));
+                if (directory.Name == "EFI") {
+                    directoryNode.Nodes[node].Expand();
+                }
+            }
+            foreach (var file in directoryInfo.GetFiles()) {
 				var node = new TreeNode (file.Name);
 				node.Tag = file.FullName;
 				directoryNode.Nodes.Add(node);
@@ -134,48 +143,67 @@ namespace efing {
 		}
 
 		private void showFileContents(string filename) {
-			
-			toolStripStatusLabel.Text = filename;
+
+            /* Check if we've already opned this file */
+            foreach (Form childForm in MdiChildren) {
+                if (childForm.Text == filename) {
+                    childForm.Activate();
+                    return;
+                }
+            }
+
+            /* Load the file into the correct form */
+            toolStripStatusLabel.Text = filename;
 			switch (Path.GetFileName(filename)) {
 			case "grub.cfg":
 				Documents.Grub_cfg childForm1 = new Documents.Grub_cfg ();
 				childForm1.MdiParent = this;
 				childForm1.Text = filename;
-				childForm1.FormBorderStyle = FormBorderStyle.FixedSingle;
+                childForm1.WindowState = FormWindowState.Maximized;
+                childForm1.FormBorderStyle = FormBorderStyle.FixedSingle;
 				childForm1.SetText(System.IO.File.ReadAllText(filename));
+                childForm1.SetTitle(filename);
 				childForm1.Show();
 				break;
 			case "refind.conf":
 				Documents.Refind_conf childForm2 = new Documents.Refind_conf();
 				childForm2.MdiParent = this;
 				childForm2.Text = filename;
-				childForm2.FormBorderStyle = FormBorderStyle.FixedSingle;
+                childForm2.WindowState = FormWindowState.Maximized;
+                childForm2.FormBorderStyle = FormBorderStyle.FixedSingle;
 				childForm2.SetText(System.IO.File.ReadAllText(filename));
-				childForm2.Show();
+                childForm2.SetTitle(filename);
+                childForm2.Show();
 				break;
 			case "refind_linux.conf":
 				Documents.Refind_linux_conf childForm3 = new Documents.Refind_linux_conf();
 				childForm3.MdiParent = this;
 				childForm3.Text = filename;
 				childForm3.FormBorderStyle = FormBorderStyle.FixedSingle;
-				childForm3.SetText(System.IO.File.ReadAllText(filename));
-				childForm3.Show();
+                childForm3.FormBorderStyle = FormBorderStyle.FixedSingle;
+                childForm3.SetText(System.IO.File.ReadAllText(filename));
+                childForm3.SetTitle(filename);
+                childForm3.Show();
 				break;
 			case "startup.nsh":
 				Documents.Startup_nsh childForm4 = new Documents.Startup_nsh();
 				childForm4.MdiParent = this;
 				childForm4.Text = filename;
-				childForm4.FormBorderStyle = FormBorderStyle.FixedSingle;
+                childForm4.FormBorderStyle = FormBorderStyle.FixedSingle;
+                childForm4.FormBorderStyle = FormBorderStyle.FixedSingle;
 				childForm4.SetText(System.IO.File.ReadAllText(filename));
-				childForm4.Show();
+                childForm4.SetTitle(filename);
+                childForm4.Show();
 				break;
 			case "theme.cfg":
 				Documents.Theme_cfg childForm5 = new Documents.Theme_cfg();
 				childForm5.MdiParent = this;
 				childForm5.Text = filename;
-				childForm5.FormBorderStyle = FormBorderStyle.FixedSingle;
+                childForm5.FormBorderStyle = FormBorderStyle.FixedSingle;
+                childForm5.FormBorderStyle = FormBorderStyle.FixedSingle;
 				childForm5.SetText(System.IO.File.ReadAllText(filename));
-				childForm5.Show();
+                childForm5.SetTitle(filename);
+                childForm5.Show();
 				break;
 			default:
 //				fileTextBox.Text = "";

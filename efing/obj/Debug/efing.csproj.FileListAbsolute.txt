@@ -3,10 +3,10 @@ C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\bin\Debug\efing
 C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\bin\Debug\efing.pdb
 C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\obj\Debug\efing.AboutBox.resources
 C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\obj\Debug\efing.EfiExplorer.resources
-C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\obj\Debug\efing.MainForm.resources
 C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\obj\Debug\efing.Properties.Resources.resources
 C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\obj\Debug\efing.csproj.GenerateResource.Cache
 C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\obj\Debug\efing.exe
 C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\obj\Debug\efing.pdb
 C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\obj\Debug\efing.Documents.Default.resources
 C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\obj\Debug\efing.csprojResolveAssemblyReference.cache
+C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\bin\Debug\System.Windows.Forms.dll

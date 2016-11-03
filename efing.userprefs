@@ -1,9 +1,9 @@
 ﻿<Properties StartupItem="efing/efing.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="efing/Form1.Designer.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="efing/EfiExplorer.cs">
     <Files>
-      <File FileName="efing/Form1.cs" Line="139" Column="46" />
-      <File FileName="efing/Form1.Designer.cs" Line="112" Column="27" />
+      <File FileName="efing/EfiExplorer.cs" Line="155" Column="1" />
+      <File FileName="efing/EfiExplorer.Designer.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
