@@ -1,0 +1,11 @@
+c:\users\bruce\documents\visual studio 2015\Projects\HelloWinForrm\HelloWinForrm\bin\Debug\HelloWinForrm.exe.config
+c:\users\bruce\documents\visual studio 2015\Projects\HelloWinForrm\HelloWinForrm\bin\Debug\HelloWinForrm.exe
+c:\users\bruce\documents\visual studio 2015\Projects\HelloWinForrm\HelloWinForrm\bin\Debug\HelloWinForrm.pdb
+c:\users\bruce\documents\visual studio 2015\Projects\HelloWinForrm\HelloWinForrm\obj\Debug\HelloWinForrm.csprojResolveAssemblyReference.cache
+c:\users\bruce\documents\visual studio 2015\Projects\HelloWinForrm\HelloWinForrm\obj\Debug\HelloWinForrm.Documents.Default.resources
+c:\users\bruce\documents\visual studio 2015\Projects\HelloWinForrm\HelloWinForrm\obj\Debug\HelloWinForrm.Properties.Resources.resources
+c:\users\bruce\documents\visual studio 2015\Projects\HelloWinForrm\HelloWinForrm\obj\Debug\HelloWinForrm.csproj.GenerateResource.Cache
+c:\users\bruce\documents\visual studio 2015\Projects\HelloWinForrm\HelloWinForrm\obj\Debug\HelloWinForrm.exe
+c:\users\bruce\documents\visual studio 2015\Projects\HelloWinForrm\HelloWinForrm\obj\Debug\HelloWinForrm.pdb
+C:\Users\bruce\documents\visual studio 2015\Projects\HelloWinForrm\HelloWinForrm\obj\Debug\efing.AboutBox.resources
+C:\Users\bruce\documents\visual studio 2015\Projects\HelloWinForrm\HelloWinForrm\obj\Debug\efing.EfiExplorer.resources

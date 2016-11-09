@@ -1,0 +1,12 @@
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/HelloWinForrm/obj/Debug/.NETFramework,Version=v4.5.2.AssemblyAttribute.cs
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/HelloWinForrm/obj/Debug/HelloWinForrm.Documents.Default.resources
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/HelloWinForrm/obj/Debug/HelloWinForrm.Properties.Resources.resources
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/HelloWinForrm/bin/Debug/HelloWinForrm.exe.config
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/HelloWinForrm/bin/Debug/HelloWinForrm.exe.mdb
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/HelloWinForrm/bin/Debug/HelloWinForrm.pdb
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/HelloWinForrm/bin/Debug/HelloWinForrm.exe
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/HelloWinForrm/obj/Debug/HelloWinForrm.exe
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/HelloWinForrm/obj/Debug/HelloWinForrm.exe.mdb
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/HelloWinForrm/obj/Debug/HelloWinForrm.pdb
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/HelloWinForrm/obj/Debug/efing.AboutBox.resources
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/HelloWinForrm/obj/Debug/efing.EfiExplorer.resources

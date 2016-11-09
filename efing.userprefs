@@ -1,13 +1,10 @@
-﻿<Properties StartupItem="efing/efing.csproj">
+﻿<Properties StartupConfiguration="{1BC5E1FC-5A67-4C8A-A3D5-14205A5B45FC}|Default">
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.ItemProperties.efing PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="efing/EfiExplorer.cs">
-    <Files>
-      <File FileName="efing/EfiExplorer.cs" Line="155" Column="1" />
-      <File FileName="efing/EfiExplorer.Designer.cs" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.HelloWinForrm PreferredExecutionTarget="MonoDevelop.Default" />
 </Properties>

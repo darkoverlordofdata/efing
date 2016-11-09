@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("efing")]
-[assembly: AssemblyDescription("efi tools & config")]
+[assembly: AssemblyTitle("HelloWinForrm")]
+[assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Dark Overlord of Data")]
-[assembly: AssemblyProduct("efing")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("HelloWinForrm")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b726db71-6d52-4b88-8fce-7fc4bef7fde5")]
+[assembly: Guid("1bc5e1fc-5a67-4c8a-a3d5-14205a5b45fc")]
 
 // Version information for an assembly consists of the following four values:
 //

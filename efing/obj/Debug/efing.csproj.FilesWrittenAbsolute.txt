@@ -1,22 +1,24 @@
-/home/bruce/Git/efing/efing/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
-/home/bruce/Git/efing/efing/obj/Debug/efing.AboutBox.resources
-/home/bruce/Git/efing/efing/obj/Debug/efing.Documents.Default.resources
-/home/bruce/Git/efing/efing/obj/Debug/efing.EfiExplorer.resources
-/home/bruce/Git/efing/efing/obj/Debug/efing.Properties.Resources.resources
-/home/bruce/Git/efing/efing/bin/Debug/efing.exe.config
-/home/bruce/Git/efing/efing/bin/Debug/efing.exe.mdb
-/home/bruce/Git/efing/efing/bin/Debug/efing.exe
-/home/bruce/Git/efing/efing/obj/Debug/efing.exe
-/home/bruce/Git/efing/efing/obj/Debug/efing.exe.mdb
-/home/bruce/Git/efing/efing/bin/Debug/System.Windows.Forms.dll
-/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/obj/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/efing/obj/Debug/.NETFramework,Version=v4.5.2.AssemblyAttribute.cs
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/efing/obj/Debug/efing.AboutBox.resources
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/efing/obj/Debug/HelloWinForrm.Documents.Default.resources
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/efing/obj/Debug/efing.EfiExplorer.resources
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/efing/obj/Debug/HelloWinForrm.Properties.Resources.resources
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/efing/bin/Debug/HelloWinForrm.exe.config
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/efing/bin/Debug/HelloWinForrm.exe.mdb
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/efing/bin/Debug/HelloWinForrm.pdb
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/efing/bin/Debug/HelloWinForrm.exe
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/efing/obj/Debug/HelloWinForrm.exe
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/efing/obj/Debug/HelloWinForrm.exe.mdb
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/HelloWinForrm/efing/obj/Debug/HelloWinForrm.pdb
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/obj/Debug/.NETFramework,Version=v4.5.2.AssemblyAttribute.cs
 /media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/obj/Debug/efing.AboutBox.resources
-/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/obj/Debug/efing.Documents.Default.resources
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/obj/Debug/HelloWinForrm.Documents.Default.resources
 /media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/obj/Debug/efing.EfiExplorer.resources
-/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/obj/Debug/efing.Properties.Resources.resources
-/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/bin/Debug/efing.exe.config
-/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/bin/Debug/efing.exe.mdb
-/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/bin/Debug/efing.exe
-/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/obj/Debug/efing.exe
-/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/obj/Debug/efing.exe.mdb
-/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/bin/Debug/System.Windows.Forms.dll
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/obj/Debug/HelloWinForrm.Properties.Resources.resources
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/bin/Debug/HelloWinForrm.exe.config
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/bin/Debug/HelloWinForrm.exe.mdb
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/bin/Debug/HelloWinForrm.pdb
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/bin/Debug/HelloWinForrm.exe
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/obj/Debug/HelloWinForrm.exe
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/obj/Debug/HelloWinForrm.exe.mdb
+/media/bruce/OS/Users/bruce/Documents/Visual Studio 2015/Projects/efing/efing/obj/Debug/HelloWinForrm.pdb

@@ -78,7 +78,12 @@ namespace efing.Documents {
                 data[2] = c.value;
                 table.Rows.Add(data);
             }
-            this.SetData(table);
+
+            this.SetData(table, (DataGridView dataGridView) => {
+                dataGridView.Visible = true;
+                dataGridView.Columns[1].ReadOnly = true;
+                dataGridView.Columns[2].Width = 300;
+            });
 
         }
 

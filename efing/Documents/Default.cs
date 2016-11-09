@@ -27,9 +27,11 @@ namespace efing.Documents {
 
         public void SetData(DataTable data) {
             this.dataGridView.DataSource = data;
-            this.dataGridView.Visible = true;
+        }
 
-            this.dataGridView.Columns[2].Width = 300;
+        public void SetData(DataTable data, Action<DataGridView> format) {
+            this.dataGridView.DataSource = data;
+            format(this.dataGridView);
         }
 
         public void SetDescription(string text) {
