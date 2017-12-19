@@ -9,3 +9,14 @@ C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\obj\Debug\Hello
 C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\obj\Debug\efing.csproj.GenerateResource.Cache
 C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\bin\Debug\HelloWinForrm.exe
 C:\Users\bruce\Documents\Visual Studio 2015\Projects\efing\efing\bin\Debug\HelloWinForrm.pdb
+C:\Users\darko\Documents\GitHub\efing\efing\bin\Debug\HelloWinForrm.exe.config
+C:\Users\darko\Documents\GitHub\efing\efing\bin\Debug\HelloWinForrm.exe
+C:\Users\darko\Documents\GitHub\efing\efing\bin\Debug\HelloWinForrm.pdb
+C:\Users\darko\Documents\GitHub\efing\efing\obj\Debug\efing.AboutBox.resources
+C:\Users\darko\Documents\GitHub\efing\efing\obj\Debug\HelloWinForrm.Documents.Default.resources
+C:\Users\darko\Documents\GitHub\efing\efing\obj\Debug\efing.EfiExplorer.resources
+C:\Users\darko\Documents\GitHub\efing\efing\obj\Debug\HelloWinForrm.Properties.Resources.resources
+C:\Users\darko\Documents\GitHub\efing\efing\obj\Debug\efing.csproj.GenerateResource.Cache
+C:\Users\darko\Documents\GitHub\efing\efing\obj\Debug\efing.csproj.CoreCompileInputs.cache
+C:\Users\darko\Documents\GitHub\efing\efing\obj\Debug\HelloWinForrm.exe
+C:\Users\darko\Documents\GitHub\efing\efing\obj\Debug\HelloWinForrm.pdb

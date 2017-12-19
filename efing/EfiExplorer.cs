@@ -45,19 +45,19 @@ namespace efing {
              * In either case, allow the user to select an alternate. 
              */
 
-            var dialog = new FolderBrowserDialog();
-            dialog.Description = "Select the EFI root folder";
-            dialog.ShowNewFolderButton = false;
-            dialog.RootFolder = Environment.SpecialFolder.MyComputer;
+            var dialog = new FolderBrowserDialog
+            {
+                Description = "Select the EFI root folder",
+                ShowNewFolderButton = false,
+                RootFolder = Environment.SpecialFolder.MyComputer
+            };
             if (dialog.ShowDialog(this) == DialogResult.OK) {
                 efiRoot = dialog.SelectedPath;
             }
 
             try {
                 ListDirectory(this.treeView, efiRoot);
-            } catch (Exception ex) {
-
-            }
+            } catch (Exception) {}
         }
 
         private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e) {
@@ -125,9 +125,7 @@ namespace efing {
 
             try {
                 ListDirectory(this.treeView, efiRoot);
-            } catch (Exception ex) {
-
-            }
+            } catch (Exception) { }
 
         }
 
@@ -175,50 +173,60 @@ namespace efing {
             toolStripStatusLabel.Text = filename;
             switch (Path.GetFileName(filename)) {
                 case "grub.cfg":
-                    Documents.Grub_cfg childForm1 = new Documents.Grub_cfg();
-                    childForm1.MdiParent = this;
-                    childForm1.Text = filename;
-                    childForm1.WindowState = FormWindowState.Maximized;
-                    childForm1.FormBorderStyle = FormBorderStyle.FixedSingle;
+                    Documents.Grub_cfg childForm1 = new Documents.Grub_cfg
+                    {
+                        MdiParent = this,
+                        Text = filename,
+                        WindowState = FormWindowState.Maximized,
+                        FormBorderStyle = FormBorderStyle.FixedSingle
+                    };
                     childForm1.SetText(System.IO.File.ReadAllText(filename));
                     childForm1.SetTitle(filename);
                     childForm1.Show();
                     break;
                 case "refind.conf":
-                    Documents.Refind_conf childForm2 = new Documents.Refind_conf();
-                    childForm2.MdiParent = this;
-                    childForm2.Text = filename;
-                    childForm2.WindowState = FormWindowState.Maximized;
-                    childForm2.FormBorderStyle = FormBorderStyle.FixedSingle;
+                    Documents.Refind_conf childForm2 = new Documents.Refind_conf
+                    {
+                        MdiParent = this,
+                        Text = filename,
+                        WindowState = FormWindowState.Maximized,
+                        FormBorderStyle = FormBorderStyle.FixedSingle
+                    };
                     childForm2.SetText(System.IO.File.ReadAllText(filename));
                     childForm2.SetTitle(filename);
                     childForm2.Show();
                     break;
                 case "refind_linux.conf":
-                    Documents.Refind_linux_conf childForm3 = new Documents.Refind_linux_conf();
-                    childForm3.MdiParent = this;
-                    childForm3.Text = filename;
-                    childForm3.FormBorderStyle = FormBorderStyle.FixedSingle;
+                    Documents.Refind_linux_conf childForm3 = new Documents.Refind_linux_conf
+                    {
+                        MdiParent = this,
+                        Text = filename,
+                        FormBorderStyle = FormBorderStyle.FixedSingle
+                    };
                     childForm3.FormBorderStyle = FormBorderStyle.FixedSingle;
                     childForm3.SetText(System.IO.File.ReadAllText(filename));
                     childForm3.SetTitle(filename);
                     childForm3.Show();
                     break;
                 case "startup.nsh":
-                    Documents.Startup_nsh childForm4 = new Documents.Startup_nsh();
-                    childForm4.MdiParent = this;
-                    childForm4.Text = filename;
-                    childForm4.FormBorderStyle = FormBorderStyle.FixedSingle;
+                    Documents.Startup_nsh childForm4 = new Documents.Startup_nsh
+                    {
+                        MdiParent = this,
+                        Text = filename,
+                        FormBorderStyle = FormBorderStyle.FixedSingle
+                    };
                     childForm4.FormBorderStyle = FormBorderStyle.FixedSingle;
                     childForm4.SetText(System.IO.File.ReadAllText(filename));
                     childForm4.SetTitle(filename);
                     childForm4.Show();
                     break;
                 case "theme.cfg":
-                    Documents.Theme_cfg childForm5 = new Documents.Theme_cfg();
-                    childForm5.MdiParent = this;
-                    childForm5.Text = filename;
-                    childForm5.FormBorderStyle = FormBorderStyle.FixedSingle;
+                    Documents.Theme_cfg childForm5 = new Documents.Theme_cfg
+                    {
+                        MdiParent = this,
+                        Text = filename,
+                        FormBorderStyle = FormBorderStyle.FixedSingle
+                    };
                     childForm5.FormBorderStyle = FormBorderStyle.FixedSingle;
                     childForm5.SetText(System.IO.File.ReadAllText(filename));
                     childForm5.SetTitle(filename);

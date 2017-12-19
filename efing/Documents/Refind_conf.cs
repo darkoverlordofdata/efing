@@ -25,8 +25,8 @@ namespace efing.Documents {
     }
 
     public partial class Refind_conf : efing.Documents.Default {
-        private int current = 0;
-        private int max = 100;
+        // private int current = 0;
+        // private int max = 100;
         private Config[] config;
          
         public Refind_conf() {
